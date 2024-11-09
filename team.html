@@ -1,344 +1,371 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, maximum-scale=1">
-<title>Unique</title>
-<link rel="icon" href="favicon.png" type="image/png">
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css"> 
-<link href="css/font-awesome.css" rel="stylesheet" type="text/css"> 
-<link href="css/animate.css" rel="stylesheet" type="text/css">
- 
-<!--[if lt IE 9]>
-    <script src="js/respond-1.1.0.min.js"></script>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/html5element.js"></script>
-<![endif]-->
- 
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1" />
+    <title>Team - Unique</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Background styling for consistency */
+      body {
+        background-image: url("./img/galaxy.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        overflow-y: auto;
+      }
 
-<!--Header_section-->
-<header id="header_wrapper">
-  <div class="container">
-    <div class="header_box">
-      <div class="logo">
-        <a href="#"><img src="img/logo.png" alt="logo" style="width: 100px; height: auto;"></a>
-      </div>
-	  <nav class="navbar navbar-inverse" role="navigation">
-      <div class="navbar-header">
-        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      /* Team Section Styling */
+      .team-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 100px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .team-card {
+        width: 250px;
+        height: 350px;
+        perspective: 1000px;
+        margin: 20px;
+      }
+
+      .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        transform: rotateY(180deg);
+      }
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .card-front {
+        background: linear-gradient(135deg, #020b30, #3a4e7a);
+      }
+
+      .card-front img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+
+      /* Set card front name to white */
+      .card-front h3 {
+        color: white;
+      }
+
+      .card-back {
+        background-color: #ffffff;
+        color: #333;
+        transform: rotateY(180deg);
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .social-links a {
+        text-decoration: none;
+        color: #0077b5;
+        margin: 0 10px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Header Section-->
+    <header id="header_wrapper">
+      <div class="container">
+        <div class="header_box">
+          <div class="logo">
+            <a href="index.html"
+              ><img
+                src="img/logo.png"
+                alt="logo"
+                style="width: 110px; height: auto"
+            /></a>
+          </div>
+          <nav class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+              <button
+                type="button"
+                id="nav-toggle"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target="#main-nav"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="main-nav" class="collapse navbar-collapse navStyle">
+              <ul class="nav navbar-nav" id="mainNav">
+                <li><a href="index.html" class="scroll-link">Home</a></li>
+                <li class="active">
+                  <a href="team.html" class="scroll-link">Team</a>
+                </li>
+                <li><a href="events.html" class="scroll-link">Events</a></li>
+                <li>
+                  <a
+                    href="https://techfounders-blog.pages.dev/"
+                    target="_blank"
+                    class="scroll-link"
+                    >Blog</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
-	    <div id="main-nav" class="collapse navbar-collapse navStyle">
-			<ul class="nav navbar-nav" id="mainNav">
-			  <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
-			  <li><a href="./team.html" class="scroll-link">Team</a></li>
-			  <li><a href="./events.html" class="scroll-link">Events</a></li>
-			  <li><a href="https://techfounders-blog.pages.dev/" target="_blank" class="scroll-link">Blog</a></li>
       </div>
-	 </nav>
-    </div>
-  </div>
-</header>
-<!--Header_section--> 
+    </header>
 
-<!--Hero_Section-->
-<section id="hero_section" class="top_cont_outer">
-  <div class="hero_wrapper">
-    <div class="container">
-      <div class="hero_section">
-        <div class="row">
-          <div class="col-lg-5 col-sm-7">
-            <div class="top_left_cont zoomIn wow animated"> 
-              <h2>We are <strong>TechFounders</strong> at University of California, Berkeley</h2>
-              <p>TBD</p>
-              <a href="#service" class="read_more2">About Us</a> 
+    <!-- Team Section -->
+    <section id="team_section" class="team-section">
+      <!-- James Wang -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/James Wang.jpg" alt="James Wang" />
+            <h3>James Wang</h3>
+            <p>Member, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>James Wang</h3>
+            <p>
+              Hi everyone, I am a sophomore at UC Berkeley studying Data
+              Science, Statistics, and Computer Science. I am particularly
+              interested in data engineering, cloud computing services, and
+              distributed systems. I enjoy playing soccer and piano, and I look
+              forward to connecting and exchanging ideas with everyone!
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/james-wang-6595202bb/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://www.instagram.com/jameswang233/" target="_blank"
+                >Instagram</a
+              >
+              <a href="#">Wechat: Sonnycoys7</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!--Hero_Section-->  
 
-<section id="aboutUs"><!--Aboutus-->
-<div class="inner_wrapper">
-  <div class="container">
-    <h2>About Us</h2>
-    <div class="inner_section">
-	<div class="row">
-      <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right"><img src="img/about-img.jpg" class="img-circle delay-03s animated wow zoomIn" alt=""></div>
-      	<div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
-        	<div class=" delay-01s animated fadeInDown wow animated">
-			<h3>Lorem Ipsum has been the industry's standard dummy text ever..</h3><br/> 
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.PageMaker including versions of Lorem Ipsum.</p> <br/>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged like Aldus PageMaker including versions of Lorem Ipsum.</p>
-</div>
-<div class="work_bottom"> <span>Want to know more..</span> <a href="#contact" class="contact_btn">Contact Us</a> </div>       
-	   </div>
-      	
-      </div>
-	  
-      
-    </div>
-  </div> 
-  </div>
-</section>
-<!--Aboutus--> 
-
-
-<!--Service-->
-<section  id="service">
-  <div class="container">
-    <h2>Partners</h2>
-    <div class="service_wrapper">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="service_block">
-            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-android"></i></span> </div>
-            <h3 class="animated fadeInUp wow">Android</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+      <!-- Yiyang Ma -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/Yiyang Ma (Maria).jpg" alt="Yiyang Ma" />
+            <h3>Yiyang Ma</h3>
+            <p>Head, Tech Department</p>
           </div>
-        </div>
-        <div class="col-lg-4 borderLeft">			
-          <div class="service_block">
-            <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><i class="fa fa-apple"></i></span> </div>
-            <h3 class="animated fadeInUp wow">Apple IOS</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 borderLeft">
-          <div class="service_block">
-            <div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa fa-html5"></i></span> </div>
-            <h3 class="animated fadeInUp wow">Design</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+          <div class="card-back">
+            <h3>Yiyang Ma</h3>
+            <p>
+              Hey! I'm currently a sophomore student at Berkeley with a passion
+              for innovative design, UI/UX, AI, and data analysis. My main
+              interests are in programming and creating impactful projects. In
+              my free time, I love playing badminton, piano, and sailing.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/mariayiyangma" target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://www.instagram.com/mariayiyangm/" target="_blank"
+                >Instagram</a
+              >
+              <a href="#">Wechat: 1585182892</a>
+            </div>
           </div>
         </div>
       </div>
-	   </div>
-  </div>
-</section>
-<!--Service-->
 
+      <!-- Albert Xie -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/albert_headshot.JPG" alt="Albert Xie" />
+            <h3>Albert Xie</h3>
+            <p>Member, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>Albert Xie</h3>
+            <p>
+              Hello, everyone! I’m a senior at UC Berkeley, majoring in
+              Electrical Engineering and Computer Science. I have a strong
+              interest in mixed reality and artificial intelligence, and I’m
+              excited to connect and interact with all of you!
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/albert-xie-736471290"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
 
-<section class="page_section" id="clients"><!--page_section-->
-  <h2>Clients</h2>
-<!--page_section-->
-<div class="client_logos"><!--client_logos-->
-  <div class="container">
-    <ul class="fadeInRight animated wow">
-      <li><a href="https://www.apple.com/iphone/"><img src="img/client_logo1.png" alt=""></a></li>
-      <li><a href="https://www.android.com/"><img src="img/client_logo2.png" alt=""></a></li>
-      <li><a href="https://www.samsung.com/"><img src="img/client_logo3.png" alt=""></a></li>
-      <li><a href="https://microsoft.com/"><img src="img/client_logo5.png" alt=""></a></li>
-    </ul>
-  </div>
-</div>
-</section>
-<!--client_logos-->
+      <!-- Shengxiang Lin -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/Shengxiang Lin.jpg" alt="Shengxiang Lin" />
+            <h3>Shengxiang Lin</h3>
+            <p>Member, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>Shengxiang Lin</h3>
+            <p>
+              Hi everyone, I am an international student at UC Berkeley studying
+              Computer Science and Technology. I am particularly interested in
+              artificial intelligence and operating systems. I look forward to
+              interacting with all of you!
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/shengxiang-lin-b13106325/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a href="#">Wechat: wxid_5p1rkhst5ebm22</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<!-- Portfolio -->
-<section id="Portfolio" class="content"> 
-  
-  <!-- Container -->
-  <div class="container portfolio_title"> 
-    
-    <!-- Title -->
-    <div class="section-title">
-      <h2>Past News</h2>
-    </div>
-    <!--/Title --> 
-    
-  </div>
-  <!-- Container -->
-  
-  <div class="portfolio-top"></div>
-  
-  <!-- Portfolio Filters -->
-  <div class="portfolio"> 
-    
-    <div id="filters" class="sixteen columns">
-      <ul class="clearfix">
-        <li><a id="all" href="#" data-filter="*" class="active">
-          <h5>All</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".prototype">
-          <h5>Prototype</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".design">
-          <h5>Design</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".android">
-          <h5>Android</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".appleIOS">
-          <h5>Apple IOS</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".web">
-          <h5>Web App</h5>
-          </a></li>
-      </ul>
-    </div>
-    <!--/Portfolio Filters --> 
-    
-    <!-- Portfolio Wrapper -->
-    <div class="isotope fadeInLeft animated wow" style="position: relative; overflow: hidden; height: 480px;" id="portfolio_wrapper"> 
-      
-      <!-- Portfolio Item -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   appleIOS isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic1.jpg"  alt="Portfolio 1"> </div>        
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">SMS Mobile App</h4>
+      <!-- Fangyuan Lin -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/Fangyuan Lin.jpg" alt="Fangyuan Lin" />
+            <h3>Fangyuan Lin</h3>
+            <p>Member, Tech Department</p>
           </div>
-        </div>
-        </div>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item-->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic2.jpg" alt="Portfolio 1"> </div>
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">Finance App</h4>
+          <div class="card-back">
+            <h3>Fangyuan Lin</h3>
+            <p>
+              I am a rising probabilist, broadly interested in probability
+              theory, stochastic processes and information theory.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/fangyuan-lin-93487b20b/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a
+                href="https://www.instagram.com/keep_learning_math_until_i_die/"
+                target="_blank"
+                >Instagram</a
+              >
+              <a href="#">Wechat: lfy1980361663</a>
+            </div>
           </div>
         </div>
       </div>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design  isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic3.jpg" alt="Portfolio 1"> </div>
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">GPS Concept</h4>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item--> 
-      
-      <!-- Portfolio Item-->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  android  prototype web isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic4.jpg" alt="Portfolio 1"> </div>
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">Shopping</h4>
-          </div>
-        </div>
-      </div>
-      <!-- Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic5.jpg" alt="Portfolio 1"> </div>
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">Managment</h4>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  web isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic6.jpg" alt="Portfolio 1"> </div>
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">iPhone</h4>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item  -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design web isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic7.jpg" alt="Portfolio 1"> </div>       
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">Nexus Phone</h4>
-          </div>
-        </div>
-       </div>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   android isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic8.jpg" alt="Portfolio 1"> </div>       
-        <div class="item_overlay">
-          <div class="item_info"> 
-				<h4 class="project_name">Android</h4>
-          </div>
-        </div>
-        </a> </div>
-      <!--/Portfolio Item --> 
-      
-    </div>
-    <!--/Portfolio Wrapper --> 
-    
-  </div>
-  <!--/Portfolio Filters -->
-  
-  <div class="portfolio_btm"></div>
-  
-  
-  <div id="project_container">
-    <div class="clear"></div>
-    <div id="project_data"></div>
-  </div>
- 
-  
-</section>
-<!--/Portfolio --> 
 
-
-<!--Footer-->
-<footer class="footer_wrapper" id="contact">
-  <div class="container">
-    <section class="page_section contact" id="contact">
-      <div class="contact_section">
-        <h2>Contact Us</h2>
-        <div class="row">
-          <div class="col-lg-4">
-            
+      <!-- Boxuan Hu -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/Boxuan Hu.jpg" alt="Boxuan Hu" />
+            <h3>Boxuan Hu</h3>
+            <p>Member, Tech Department</p>
           </div>
-          <div class="col-lg-4">
-           
-          </div>
-          <div class="col-lg-4">
-          
+          <div class="card-back">
+            <h3>Boxuan Hu</h3>
+            <p>
+              Hi there. I am broadly interested in computer systems and
+              networks. My research currently focuses on Datacenter Networks,
+              decentralized SDN and Sky Computing. If you are interested in my
+              research, please feel free to contact me.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/boxuan-hu-20040220root/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://www.instagram.com/huboxuanhu/" target="_blank"
+                >Instagram</a
+              >
+              <a href="#">Wechat: XJTUhbx2004</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row">
- 
-        <div class="col-lg-12 wow fadeInLeft delay-06s">
-          <div class="form">
-            <input class="input-text" type="text" name="" value="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-            <input class="input-text" type="text" name="" value="Your E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-            <textarea class="input-text text-area" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
-            <input class="input-btn" type="submit" value="send message">
+
+      <!-- Yenny Ying -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/Yenny Ying.jpg" alt="Yenny Ying" />
+            <h3>Yenny Ying</h3>
+            <p>Member, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>Yenny Ying</h3>
+            <p>
+              Hey! I am Yenny, a current junior at UC Berkeley. I am majoring in
+              applied math and data science. Love movies and R&B.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/yuan-ying-2b4516328"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://www.instagram.com/yenn_y1009/" target="_blank"
+                >Instagram</a
+              >
+              <a href="#">Wechat: serenity-yy1009</a>
+            </div>
           </div>
         </div>
-		
       </div>
     </section>
-  </div>
-  <div class="container">
-    <div class="footer_bottom"><span>Copyright © 2024,    Template by <a href="http://webthemez.com">TechFounders</a> </span> </div>
-  </div>
-</footer>
 
-
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
-<script type="text/javascript" src="js/jquery.nav.js"></script> 
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/jquery.isotope.js"></script>
-<script type="text/javascript" src="js/wow.js"></script> 
-<script type="text/javascript" src="js/custom.js"></script>
-
-</body>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
 </html>
