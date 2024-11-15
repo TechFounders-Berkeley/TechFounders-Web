@@ -339,8 +339,9 @@ p {
 }
 
 #story_section .text_section p {
-    font-size: 20px;
+    font-size: 21px;
     line-height: 2;
+    margin-bottom: 45px;
 }
 
 /* Help_Succeed
@@ -403,75 +404,120 @@ p {
 }
 
 
-
-
-/* Services
+/* Why Choose Us
 ---------------------------------*/
-
-#service {
-    padding: 60px 0px;
-    background: #EFEFEF;
-}
-
-.service_wrapper {
-    padding: 40px 0 40px;
-}
-
-.service_section {
-}
-
-.service_block {
-    text-align: center;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.service_icon {
-    border: 2px solid #005490;
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    margin: 0px auto 25px;
-}
-
-.service_icon.icon2 {
-    border: 2px solid #005490;
-}
-
-.service_icon.icon3 {
-    border: 2px solid #005490;
-}
-
-.service_icon span {
-    background: transparent;
-    border-radius: 50%;
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-
-.service_icon i {
-    color: #005490;
-    font-size: 40px;
-    margin-top: 0;
+#Why_Choose_Us_Section {
     position: relative;
-    top: 20px;
-    z-index: 20;
+    font-family: Arial, sans-serif;
+    background-image: url('/img/galaxy.jpg'); /* 替换为实际背景路径 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 60px 20px; /* 适当的内边距，确保内容不会贴边 */
 }
 
-.service_block h3 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    color: #111111;
-    margin: 35px 0 18px;
+#Why_Choose_Us_Section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(21, 20, 20, 0.8); /* 灰色半透明遮罩 */
+    z-index: 1;
 }
 
-.service_block p {
-    font-size: 16px;
-    color: #888888;
-    margin: 0px;
+.Why_Choose_Us_Content {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 20px;
+    z-index: 2; /* 确保内容在遮罩之上显示 */
+    color: #fff; /* 设置文字颜色为白色，以便在黑色遮罩上清晰可见 */
 }
+
+.Why_Choose_Us_Content h2 {
+    font-size: 3.5em;
+    line-height: 1.2;
+    font-style: italic;
+    margin-bottom: 70px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900; /* 设置字体粗细 */
+    text-transform: uppercase;
+    color: #ffffff; /* 确保标题为白色 */
+}
+
+
+.conments_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0px 0;
+    gap: 0px;
+    color: #ffffff;
+    
+    background-color: rgba(82, 82, 82, 0.279);
+    border-radius: 2cap;
+    padding: 20px 2px;
+}
+
+.text-box {
+    width: 32%;
+    text-align: left;
+    padding: 9px;
+    border-radius: 8px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.title {
+    font-size: 15px;
+    display: block;
+    font-weight: bold;       /* 加粗标题 */
+    text-align: center;      /* 居中标题 */
+    margin-bottom: 0px;     /* 标题与正文之间的间距 */
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.stats p {
+    font-size: 1em;
+    font-weight: bold;
+    color: #d3d3d3;
+}
+
+.partners {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 4cap;
+    padding: 15px 0;
+}
+
+.partners img {
+    max-width: 150px;
+    height: auto;
+}
+
 
 
 /* Latest Work
