@@ -1808,4 +1808,70 @@ clear: left;
 display: block;
 padding-top: 18px;
 }
+.page_section {
+    padding: 50px 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .page_section h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .client_logos {
+    padding: 20px 0;
+  }
+  
+  .client_logos .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .client_logos ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .client_logos li {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .client_logos li:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .client_logos img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  /* 响应式设计 */
+  @media screen and (max-width: 768px) {
+    .client_logos ul {
+      gap: 15px;
+    }
+    
+    .client_logos li {
+      padding: 10px 20px;
+    }
+    
+    .client_logos img {
+      height: 30px;
+    }
+  }
 }
